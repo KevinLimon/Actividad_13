@@ -29,7 +29,7 @@ private:
 template<class T>
 ArregloDinamico<T>::ArregloDinamico()
 {
-    ad = new string[MAX];
+    ad = new T[MAX];
     cont = 0;
     tamo = MAX;
 }
@@ -73,7 +73,7 @@ size_t ArregloDinamico<T>::size()
 template<class T>
 void ArregloDinamico<T>::expandir()
 {
-    string *nv = new string[tamo+MAX];
+    string *nv = new T[tamo+MAX];
     for(size_t i=0;i <cont; i++){
         nv[i] = ad[i];
     }
