@@ -21,6 +21,7 @@ public:
     void eliminar_final();
     void eliminar_inicio();
     void eliminar(size_t d);
+    void mostrar();
     size_t size();
     string operator[](size_t a)
     {
@@ -119,6 +120,15 @@ void ArregloDinamico<T>::eliminar(size_t d)
         ad[i] = ad[i+1];
     } 
     cont--;
+}
+
+template<class T>
+void ArregloDinamico<T>::mostrar()
+{
+    for(size_t i=0;i<cont;i++){
+        cout<<ad[i]<<" ";
+    }
+    cout<<endl;
 }
 
 template<class T>
