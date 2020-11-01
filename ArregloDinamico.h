@@ -17,6 +17,7 @@ public:
     ~ArregloDinamico();
     void insertar_final(const T& s);
     void insertar_inicio(const T& s);
+    void insertar(const T& s, size_t d);
     size_t size();
     string operator[](size_t a)
     {
@@ -61,6 +62,23 @@ void ArregloDinamico<T>::insertar_inicio(const T& s)
         ad[i] = ad[i-1];
     }
     ad[0] = s;
+    cont++;
+}
+
+template<class T>
+void ArregloDinamico<T>::insertar(const T& s, size_t d)
+{
+    if (d >= cont){
+        cout<<"Posicion no valida"<<endl;
+        return;
+    }
+    if (cont==tamo){
+        expandir();
+    }
+    for(size_t i = cont;i>d;i--){
+        ad[i] = ad[i-1];
+    }
+    ad[d] = s;
     cont++;
 }
 
