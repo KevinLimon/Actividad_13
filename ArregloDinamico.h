@@ -28,6 +28,11 @@ public:
     {
         return ad[a];
     }
+    friend ArregloDinamico<T>& operator<<(ArregloDinamico<T> &a, const T& s)
+    {
+        a.insertar_final(s);
+        return a;
+    }
 private:
     void expandir();
 };
