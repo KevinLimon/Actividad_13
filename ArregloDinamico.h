@@ -55,7 +55,7 @@ template<class T>
 void ArregloDinamico<T>::insertar_final(const T& s)
 {
     if (cont==tamo){
-        expandir();
+        //expandir();
     }
     ad[cont] = s;
     cont ++;
@@ -65,7 +65,7 @@ template<class T>
 void ArregloDinamico<T>::insertar_inicio(const T& s)
 {
     if (cont==tamo){
-        expandir();
+        //expandir();
     }
     for (size_t i=cont; i>0;i--)
     {
@@ -83,7 +83,7 @@ void ArregloDinamico<T>::insertar(const T& s, size_t d)
         return;
     }
     if (cont==tamo){
-        expandir();
+        //expandir();
     }
     for(size_t i = cont;i>d;i--){
         ad[i] = ad[i-1];
@@ -154,7 +154,7 @@ size_t ArregloDinamico<T>::size()
     return cont;
 }
 
-template<class T>
+/*template<class T>
 void ArregloDinamico<T>::expandir()
 {
     string *nv = new T[tamo+MAX];
@@ -164,6 +164,6 @@ void ArregloDinamico<T>::expandir()
     delete[] ad;
     ad = nv;
     tamo = tamo + MAX;
-}
+}*/
 
 #endif

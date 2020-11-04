@@ -6,15 +6,21 @@ using namespace std;
 
 int main(){
     ArregloDinamico<Computadora> computadoras;
-    Computadora c01("Dell", "Plata" , 15550.75, 512);
-    Computadora c02("Dell", "Azul" , 17123.4, 1024);
-    Computadora c03("Lenovo", "Blanco" , 20000.0, 1024);
-    Computadora c04("Apple", "Azul" , 45000.0, 2048);
 
+    Computadora c01("Dell", "Azul", 12500.0, 1024);
+    Computadora c02("Dell", "Blanco", 17000.0, 512);
+    Computadora c03("Apple", "Azul", 45000.0, 2048);
+    Computadora c04("ASUS", "Azul", 10000.0, 1024);
     computadoras << c01 << c02 << c03 << c04;
-    //Computadora c05("ASUS", "Azul" , 12550.40, 512);
+    Computadora c05("Acer", "Amarillo", 12500.0, 1024);
+    Computadora *ptr = computadoras.buscar(c05);
 
-    //computadoras.buscar(c05);
+    if(ptr != nullptr){
+        cout << *ptr << endl;
+    }
+    else{
+        cout << "No existe"<<endl;
+    }
     /*ArregloDinamico<string> ad;
     ad.insertar_final("Chocolate");
     ad.insertar_final("Nuez");

@@ -45,6 +45,15 @@ public:
         cin >> c.memoria;
         return in;
     }
+
+    bool operator==(const Computadora& c)
+    {
+        return color == c.color;
+    }
+    bool operator==(const Computadora& c) const
+    {
+        return color == c.color;
+    }
 };
 
 
