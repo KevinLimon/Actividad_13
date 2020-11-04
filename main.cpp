@@ -7,14 +7,27 @@ using namespace std;
 int main(){
     ArregloDinamico<Computadora> computadoras;
 
-    Computadora c01("Dell", "Azul", 12500.0, 1024);
-    Computadora c02("Dell", "Blanco", 17000.0, 512);
+    Computadora c01("Dell", "Verde", 12500.0, 254);
+    Computadora c02("Lenovo", "Azul", 17000.0, 1024);
     Computadora c03("Apple", "Azul", 45000.0, 2048);
     Computadora c04("ASUS", "Azul", 10000.0, 1024);
-    computadoras << c01 << c02 << c03 << c04 << c03 << c03;
-    Computadora c05("Apple", "Azul", 45000.0, 2048);
+    Computadora c05("Acer", "Amarillo", 12000.0, 128);
 
-    ArregloDinamico<Computadora*> ptrs = computadoras.buscar_todos(c05);
+    computadoras << c01 << c02 << c03 << c04 << c05;
+
+    Computadora c06("Apple", "Azul", 45000.0, 2048);
+    Computadora c07("ASUS", "verde", 45000.0, 2048);
+
+    Computadora *ptr = computadoras.buscar(c07);
+
+    if(ptr != nullptr){
+        cout << *ptr << endl;
+    }
+    else{
+        cout << "No existe"<<endl;
+    }
+
+    /*ArregloDinamico<Computadora*> ptrs = computadoras.buscar_todos(c05);
 
     if(ptrs.size() > 0){
         for(size_t i=0;i<ptrs.size();i++){
@@ -24,16 +37,8 @@ int main(){
     }
     else{
         cout<< "No existen coincidencias"<<endl;
-    }
-
-    /*Computadora *ptr = computadoras.buscar(c05);
-
-    if(ptr != nullptr){
-        cout << *ptr << endl;
-    }
-    else{
-        cout << "No existe"<<endl;
     }*/
+
     /*ArregloDinamico<string> ad;
     ad.insertar_final("Chocolate");
     ad.insertar_final("Nuez");
