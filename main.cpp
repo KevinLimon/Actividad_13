@@ -17,6 +17,11 @@ int main(){
     ad.mostrar();
     ad.eliminar(1);
     ad.mostrar();
+
+    string *s = ad.buscar("Vainilla");
+    cout<< s << " " << *s << endl;
+    *s = "Chicle";
+    ad.mostrar();
     
     return 0;
 }
