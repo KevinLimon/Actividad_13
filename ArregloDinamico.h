@@ -23,8 +23,9 @@ public:
     void eliminar(size_t d);
     void mostrar();
     T* buscar(const T& s);
+    ArregloDinamico<T*>buscar_todos(const T& s);
     size_t size();
-    string operator[](size_t a)
+    T operator[](size_t a)
     {
         return ad[a];
     }
@@ -137,6 +138,18 @@ T* ArregloDinamico<T>::buscar(const T& s)
         }
     }
     return nullptr;
+}
+
+template<class T>
+ArregloDinamico<T*> ArregloDinamico<T>::buscar_todos(const T& s)
+{
+    ArregloDinamico<T*> ptrs;
+    for(size_t i=0;i<cont;i++){
+        if(s == ad[i]){
+            ptrs.insertar_final(&ad[i]);
+        }
+    }
+    return ptrs;
 }
 
 template<class T>

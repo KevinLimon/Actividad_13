@@ -11,16 +11,29 @@ int main(){
     Computadora c02("Dell", "Blanco", 17000.0, 512);
     Computadora c03("Apple", "Azul", 45000.0, 2048);
     Computadora c04("ASUS", "Azul", 10000.0, 1024);
-    computadoras << c01 << c02 << c03 << c04;
-    Computadora c05("Acer", "Amarillo", 12500.0, 1024);
-    Computadora *ptr = computadoras.buscar(c05);
+    computadoras << c01 << c02 << c03 << c04 << c03 << c03;
+    Computadora c05("Apple", "Azul", 45000.0, 2048);
+
+    ArregloDinamico<Computadora*> ptrs = computadoras.buscar_todos(c05);
+
+    if(ptrs.size() > 0){
+        for(size_t i=0;i<ptrs.size();i++){
+            Computadora *c = ptrs[i];
+            cout << *c <<endl;
+        }
+    }
+    else{
+        cout<< "No existen coincidencias"<<endl;
+    }
+
+    /*Computadora *ptr = computadoras.buscar(c05);
 
     if(ptr != nullptr){
         cout << *ptr << endl;
     }
     else{
         cout << "No existe"<<endl;
-    }
+    }*/
     /*ArregloDinamico<string> ad;
     ad.insertar_final("Chocolate");
     ad.insertar_final("Nuez");
